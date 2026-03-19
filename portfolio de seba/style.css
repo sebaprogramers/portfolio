@@ -1,0 +1,230 @@
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+    --bg: #0a0a0c;
+    --card: #16161a;
+    --accent: #00e5ff;
+    --text: #ffffff;
+    --text-dim: #a1a1aa;
+    --linkedin: #0077b5;
+    --github: #333;
+    --whatsapp: #25d366;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    background-image: radial-gradient(#1a1a21 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    padding: 6rem 2rem;
+    border-bottom: 1px solid #222;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.hero h1 { font-size: 3.5rem; letter-spacing: -1px; }
+.highlight { color: var(--accent); }
+.subtitle { 
+    color: var(--accent); 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-size: 0.8rem; 
+}
+
+.hero-desc { color: var(--text-dim); max-width: 600px; margin-top: 1.5rem; font-size: 1.1rem; }
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--card);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
+}
+
+/* =========================================
+   DISEÑO VERTICAL (PROYECTOS ARRIBA | HABILIDADES ABAJO)
+   ========================================= */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-bottom: 8rem;
+}
+
+.section-title {
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #222;
+    padding-bottom: 1rem;
+    color: var(--text);
+}
+
+/* CARDS CON EFECTO ZOOM Y BRILLO (HOVER GENERAL) */
+.project-card, .skill-card, .detail-box, .cta-footer a {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card, .skill-card, .detail-box {
+    background: var(--card);
+    border: 1px solid #222;
+    border-radius: 16px;
+}
+
+.project-card:hover, .skill-card:hover, .detail-box:hover {
+    border-color: var(--accent);
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 229, 255, 0.15);
+    background: #1c1c23;
+}
+
+/* =========================================
+   SECCIÓN PROYECTOS 
+   ========================================= */
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 { color: var(--accent); font-size: 1.5rem; margin-bottom: 1rem; }
+.project-card p { color: var(--text-dim); font-size: 1rem; margin-bottom: 1.5rem; }
+
+.tags { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: auto; }
+.tags span { 
+    font-size: 0.75rem; 
+    background: #222; 
+    padding: 0.3rem 0.8rem; 
+    border-radius: 6px; 
+    color: var(--text-dim); 
+}
+
+.btn-detalles {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed var(--accent);
+    width: fit-content;
+}
+
+/* =========================================
+   SECCIÓN HABILIDADES 
+   ========================================= */
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.skill-card i { font-size: 1.8rem; color: var(--accent); width: 35px; text-align: center; }
+
+/* =========================================
+   FOOTER Y BOTONES DE CONTACTO 
+   ========================================= */
+footer { padding: 6rem 0; text-align: center; border-top: 1px solid #222; }
+
+.cta-footer { 
+    display: flex; 
+    justify-content: center; 
+    gap: 1.5rem; 
+    flex-wrap: wrap; 
+    margin-top: 3rem; 
+}
+
+.cta-footer a { 
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem; 
+    border-radius: 12px; 
+    text-decoration: none; 
+    color: #fff; 
+    font-weight: 700;
+    border: 1px solid transparent;
+}
+
+/* Estilos individuales */
+.btn-linkedin { background: var(--linkedin); }
+.btn-github { background: var(--github); border: 1px solid #444 !important; }
+.btn-whatsapp { background: var(--whatsapp); }
+
+/* EFECTO HOVER PARA LOS BOTONES DEL FOOTER */
+.cta-footer a:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
+    filter: brightness(1.2);
+    border-color: var(--accent);
+}
+
+.copy { color: #444; font-size: 0.85rem; margin-top: 3rem; }
+
+/* =========================================
+   PÁGINA DE DETALLE 
+   ========================================= */
+.project-page { padding-top: 4rem; }
+.back-link { color: var(--text-dim); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 600; }
+.back-link:hover { color: var(--accent); transform: translateX(-5px); }
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.detail-box { padding: 3rem; background: #0d0d11; }
+.detail-box h3 { color: var(--accent); margin-bottom: 1.5rem; }
+.detail-box li { color: var(--text-dim); margin-bottom: 0.8rem; list-style: none; position: relative; padding-left: 1.5rem; }
+.detail-box li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .projects-list { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.8rem; }
+    .cta-footer { flex-direction: column; }
+}
